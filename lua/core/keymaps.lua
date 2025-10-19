@@ -29,3 +29,4 @@ keymap("n", "<leader>bd", ":bd", { desc = "Delete Buffer" })
 -- Window
 keymap("n", "<leader>ws", ":sp<CR>", { desc = "Horizontally Split Windows" })
 keymap("n", "<leader>wv", ":vsp<CR>", { desc = "Vertically Split Windows" })
+
