@@ -19,4 +19,6 @@ require("core.autocmds")
 require("core.keymaps")
 
 -- Plugins
-
+require("lazy").setup({
+    require("plugins.tokyonight"),
+})
