@@ -1,83 +1,31 @@
-local map = vim.keymap.set
-local opts = { noremap = true, silent = true }
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- -------------------------------------
--- File & Quit Commands
--- -------------------------------------
-map("n", "<leader>fs", ":w<CR>", opts)         -- [F]ile: [S]ave current file
-map("n", "<leader>fq", ":q<CR>", opts)         -- [F]ile: [Q]uit current window
-map("n", "<leader>fQ", ":qa!<CR>", opts)       -- [F]ile: [Q]uit all without saving
-map("n", "<leader>fw", ":wa<CR>", opts)        -- [F]ile: [W]rite all buffers
-map("n", "<leader>fm", ":make<CR>", opts)
-map("n", "<leader>fc", ":make clean<CR>", opts)
+local keymap = vim.keymap.set
 
+-- File
+keymap("n", "<leader>fw", ":wa<CR>", { desc = "Write Files" })
+keymap("n", "<leader>fq", ":q<CR>", { desc = "Quit File" })
+keymap("n", "<leader>fQ", ":qa!<CR>", { desc = "Force Quit All Files" })
 
--- -------------------------------------
--- File Exploration
--- -------------------------------------
-map("n", "<leader>ff", ":Ex<CR>", opts)
-
-
--- -------------------------------------
--- Window Management
--- -------------------------------------
-map("n", "<leader>wv", ":vsplit<CR>", opts)    -- [W]indow: Vertical split
-map("n", "<leader>ws", ":split<CR>", opts)     -- [W]indow: Horizontal split
-map("n", "<leader>wd", ":close<CR>", opts)     -- [W]indow: Delete/close split
-map("n", "<leader>wh", "<C-w>h", opts)         -- [W]indow: Move left
-map("n", "<leader>wj", "<C-w>j", opts)         -- [W]indow: Move down
-map("n", "<leader>wk", "<C-w>k", opts)         -- [W]indow: Move up
-map("n", "<leader>wl", "<C-w>l", opts)         -- [W]indow: Move right
-map("n", "<leader>w=", "<C-w>=", opts)         -- [W]indow: Equalize splits
-
-
--- -------------------------------------
--- Tabs
--- -------------------------------------
-map("n", "<leader>tn", ":tabnew<CR>", opts)    -- [T]ab: [N]ew tab
-map("n", "<leader>to", ":tabonly<CR>", opts)   -- [T]ab: Close other tabs
-map("n", "<leader>tc", ":tabclose<CR>", opts)  -- [T]ab: Close current tab
-map("n", "<leader>tl", ":tabnext<CR>", opts)   -- [T]ab: Next tab
-map("n", "<leader>th", ":tabprevious<CR>", opts)-- [T]ab: Previous tab
-map("n", "<leader>tt", ":terminal<CR>", opts)
-
-
--- -------------------------------------
 -- Buffers
--- -------------------------------------
-map("n", "<leader>bn", ":bnext<CR>", opts)     -- [B]uffer: [N]ext
-map("n", "<leader>bp", ":bprevious<CR>", opts) -- [B]uffer: [P]revious
-map("n", "<leader>bd", ":bdelete<CR>", opts)   -- [B]uffer: [D]elete
+keymap("n", "<leader>bl", ":ls<CR>", { desc = "List Buffers" })
+keymap("n", "<leader>bn", ":bn<CR>", { desc = "Next Buffer" })
+keymap("n", "<leader>bp", ":bp<CR>", { desc = "Previous Buffer" })
+keymap("n", "<leader>b1", ":b 1<CR>", { desc = "Goto Buffer 1" })
+keymap("n", "<leader>b2", ":b 2<CR>", { desc = "Goto Buffer 2" })
+keymap("n", "<leader>b3", ":b 3<CR>", { desc = "Goto Buffer 3" })
+keymap("n", "<leader>b4", ":b 4<CR>", { desc = "Goto Buffer 4" })
+keymap("n", "<leader>b5", ":b 5<CR>", { desc = "Goto Buffer 5" })
+keymap("n", "<leader>b6", ":b 6<CR>", { desc = "Goto Buffer 6" })
+keymap("n", "<leader>b7", ":b 7<CR>", { desc = "Goto Buffer 7" })
+keymap("n", "<leader>b8", ":b 8<CR>", { desc = "Goto Buffer 8" })
+keymap("n", "<leader>b9", ":b 9<CR>", { desc = "Goto Buffer 9" })
+keymap("n", "<leader>b0", ":b 10<CR>", { desc = "Goto Buffer 10" })
+keymap("n", "<leader>be", ":e ", { desc = "New Buffer" })
+keymap("n", "<leader>bd", ":bd", { desc = "Delete Buffer" })
 
-
--- -------------------------------------
--- Resize Splits
--- -------------------------------------
-map("n", "<leader>rj", ":resize -2<CR>", opts)         -- [R]esize: shrink height
-map("n", "<leader>rk", ":resize +2<CR>", opts)         -- [R]esize: grow height
-map("n", "<leader>rh", ":vertical resize -2<CR>", opts)-- [R]esize: shrink width
-map("n", "<leader>rl", ":vertical resize +2<CR>", opts)-- [R]esize: grow width
-
-
----------------------------------------
--- Line Movement
--- -------------------------------------
-map("n", "<leader>mj", ":m .+1<CR>==", opts)    -- [M]ove: current line down
-map("n", "<leader>mk", ":m .-2<CR>==", opts)    -- [M]ove: current line up
-map("v", "<leader>mj", ":m '>+1<CR>gv=gv", opts)-- [M]ove: selection down
-map("v", "<leader>mk", ":m '<-2<CR>gv=gv", opts)-- [M]ove: selection up
-
-
--- -------------------------------------
--- Search
--- -------------------------------------
-map("n", "<leader>sc", ":nohlsearch<CR>", opts) -- [S]earch: [C]lear highlights
-
-
--- -------------------------------------
--- Diagnostics (LSP-related)
--- -------------------------------------
-map("n", "<leader>de", vim.diagnostic.open_float, opts) -- [D]iagnostics: show error
-map("n", "<leader>dp", vim.diagnostic.goto_prev, opts)  -- [D]iagnostics: previous
-map("n", "<leader>dn", vim.diagnostic.goto_next, opts)  -- [D]iagnostics: next
+-- Window
+keymap("n", "<leader>ws", ":sp<CR>", { desc = "Horizontally Split Windows" })
+keymap("n", "<leader>wv", ":vsp<CR>", { desc = "Vertically Split Windows" })
