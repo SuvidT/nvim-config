@@ -27,6 +27,7 @@ require("lazy").setup({
     require("plugins.telescope"),
     require("plugins.gitsigns"),
     require("plugins.whichkey"),
+    require("plugins.autopairs"),
     require("plugins.dap"),
     require("plugins.comment"),
     require("plugins.jupynium"),

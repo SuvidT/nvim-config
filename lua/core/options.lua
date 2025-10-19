@@ -1,4 +1,4 @@
-
+--[[
 local o = vim.opt
 
 o.number = true
@@ -23,3 +23,15 @@ o.splitright = true
 o.splitbelow = true
 o.scrolloff = 8
 o.clipboard = "unnamedplus"
+]]
+
+vim.g.autoformat = true
+vim.g.snacks_animate = true
+vim.g.lazyvim_picker = "auto"
+vim.g.lazyvim_cmp = "auto"
+vim.g.ai_cmp = false
+vim.g.root_spec = {"lsp", {".git", "lua"}, "cwd"}
+vim.g.deprecation_warnings = true
+vim.g.trouble_lualine = true
+
+vim.opt.autowrite = true
