@@ -23,7 +23,7 @@ keymap("n", "<leader>b7", ":b 7<CR>", { desc = "Goto Buffer 7" })
 keymap("n", "<leader>b8", ":b 8<CR>", { desc = "Goto Buffer 8" })
 keymap("n", "<leader>b9", ":b 9<CR>", { desc = "Goto Buffer 9" })
 keymap("n", "<leader>b0", ":b 10<CR>", { desc = "Goto Buffer 10" })
-keymap("n", "<leader>be", ":e ", { desc = "New Buffer" })
+keymap("n", "<leader>be", ":edit ", { desc = "New Buffer" })
 keymap("n", "<leader>bd", ":bd", { desc = "Delete Buffer" })
 
 -- Window
