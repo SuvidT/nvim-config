@@ -29,7 +29,7 @@ require("lazy").setup({
     require("plugins.gitsigns"),
     require("plugins.whichkey"),
 --    require("plugins.autopairs"),
---    require("plugins.dap"),
---    require("plugins.comment"),
---    require("plugins.jupynium"),
+    require("plugins.dap"),
+    require("plugins.comment"),
+    require("plugins.jupynium"),
 })
