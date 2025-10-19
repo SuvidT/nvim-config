@@ -27,7 +27,7 @@ require("lazy").setup({
     require("plugins.lsp"),
     require("plugins.telescope"),
     require("plugins.gitsigns"),
---    require("plugins.whichkey"),
+    require("plugins.whichkey"),
 --    require("plugins.autopairs"),
 --    require("plugins.dap"),
 --    require("plugins.comment"),
