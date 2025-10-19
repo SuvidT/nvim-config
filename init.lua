@@ -22,9 +22,9 @@ require("core.keymaps")
 -- Plugins
 require("lazy").setup({
     require("plugins.tokyonight"),
---    require("plugins.treesitter"),
---    require("plugins.lsp"),
---    require("plugins.cmp"),
+    require("plugins.treesitter"),
+    require("plugins.cmp"),
+    require("plugins.lsp"),
 --    require("plugins.telescope"),
 --    require("plugins.gitsigns"),
 --    require("plugins.whichkey"),
