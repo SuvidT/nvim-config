@@ -25,7 +25,7 @@ require("lazy").setup({
     require("plugins.treesitter"),
     require("plugins.cmp"),
     require("plugins.lsp"),
---    require("plugins.telescope"),
+    require("plugins.telescope"),
 --    require("plugins.gitsigns"),
 --    require("plugins.whichkey"),
 --    require("plugins.autopairs"),
