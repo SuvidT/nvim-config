@@ -18,17 +18,18 @@ require("core.options")
 require("core.autocmds")
 require("core.keymaps")
 
+
 -- Plugins
 require("lazy").setup({
     require("plugins.tokyonight"),
-    require("plugins.treesitter"),
-    require("plugins.lsp"),
-    require("plugins.cmp"),
-    require("plugins.telescope"),
-    require("plugins.gitsigns"),
-    require("plugins.whichkey"),
-    require("plugins.autopairs"),
-    require("plugins.dap"),
-    require("plugins.comment"),
-    require("plugins.jupynium"),
+--    require("plugins.treesitter"),
+--    require("plugins.lsp"),
+--    require("plugins.cmp"),
+--    require("plugins.telescope"),
+--    require("plugins.gitsigns"),
+--    require("plugins.whichkey"),
+--    require("plugins.autopairs"),
+--    require("plugins.dap"),
+--    require("plugins.comment"),
+--    require("plugins.jupynium"),
 })
