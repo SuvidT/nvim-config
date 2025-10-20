@@ -31,7 +31,7 @@ require("lazy").setup({
     require("plugins.autopairs"),
     require("plugins.dap"),
     require("plugins.comment"),
-    require("plugins.jupyter_support")
+--    require("plugins.jupyter_support")
 })
 
 vim.cmd('colorscheme retrobox')
