@@ -3,6 +3,18 @@
 -- I am putting them all together for locality of behaviour (or whatever it is callled)
 
 return {
+    -- Jupytext for converting .ipynb to editable format
+    {
+        "GCBallesteros/jupytext.nvim",
+        lazy = false,
+        config = function()
+            require("jupytext").setup({
+                style = "markdown",
+                output_extension = "md",
+                force_ft = "markdown",
+            })
+        end,
+    },
     -- Molten
     {
         "benlubas/molten-nvim",

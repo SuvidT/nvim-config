@@ -39,3 +39,46 @@ map("n", "<leader>tn", ":tabnew<CR>", { desc = "Open New Tab" })
 map("n", "<leader>tl", ":tabn<CR>", { desc = "Next Tab" })
 map("n", "<leader>th", ":tabp<CR>", { desc = "Previous Tab" })
 map("n", "<leader>tc", ":tabclose<CR>", { desc = "Close Tab" })
+
+-- Clear search highlight
+map("n", "<Esc>", "<cmd>nohlsearch<cr>")
+
+-- Jupyter notebook cell management (for markdown format)
+map("n", "<leader>na", function()
+    local line = vim.api.nvim_get_current_line()
+    local row = vim.api.nvim_win_get_cursor(0)[1]
+    -- Add a new cell below
+    vim.api.nvim_buf_set_lines(0, row, row, false, { "", "```python", "", "```", "" })
+    vim.api.nvim_win_set_cursor(0, { row + 3, 0 })
+    vim.cmd("startinsert")
+end, { desc = "Add cell below" })
+
+map("n", "<leader>nA", function()
+    local row = vim.api.nvim_win_get_cursor(0)[1]
+    -- Add a new cell above
+    vim.api.nvim_buf_set_lines(0, row - 1, row - 1, false, { "", "```python", "", "```", "" })
+    vim.api.nvim_win_set_cursor(0, { row + 2, 0 })
+    vim.cmd("startinsert")
+end, { desc = "Add cell above" })
+
+map("n", "<leader>nd", function()
+    -- Delete current cell (finds ```python and deletes until next ```)
+    local row = vim.api.nvim_win_get_cursor(0)[1]
+    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+    
+    -- Find start of cell
+    local start_row = row
+    while start_row > 1 and not lines[start_row]:match("^```") do
+        start_row = start_row - 1
+    end
+    
+    -- Find end of cell
+    local end_row = row
+    while end_row < #lines and not (lines[end_row]:match("^```") and end_row > start_row) do
+        end_row = end_row + 1
+    end
+    
+    if lines[start_row]:match("^```") and lines[end_row]:match("^```") then
+        vim.api.nvim_buf_set_lines(0, start_row - 1, end_row, false, {})
+    end
+end, { desc = "Delete cell" })

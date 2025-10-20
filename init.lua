@@ -31,6 +31,5 @@ require("lazy").setup({
     require("plugins.autopairs"),
     require("plugins.dap"),
     require("plugins.comment"),
---    require("plugins.jupynium"),
     require("plugins.jupyter_support")
 })
