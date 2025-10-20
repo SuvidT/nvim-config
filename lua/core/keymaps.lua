@@ -82,3 +82,32 @@ map("n", "<leader>nd", function()
         vim.api.nvim_buf_set_lines(0, start_row - 1, end_row, false, {})
     end
 end, { desc = "Delete cell" })
+
+--[[
+-- Run entire code cell
+map("n", "<leader>mx", function()
+    local row = vim.api.nvim_win_get_cursor(0)[1]
+    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+    
+    -- Find start of cell
+    local start_row = row
+    while start_row > 1 and not lines[start_row]:match("^```") do
+        start_row = start_row - 1
+    end
+    
+    -- Find end of cell
+    local end_row = row
+    while end_row < #lines and not (lines[end_row]:match("^```") and end_row > start_row) do
+        end_row = end_row + 1
+    end
+    
+    if lines[start_row]:match("^```") and lines[end_row]:match("^```") then
+        -- Select the lines between the ``` markers
+        vim.api.nvim_win_set_cursor(0, { start_row + 1, 0 })
+        vim.cmd("normal! V")
+        vim.api.nvim_win_set_cursor(0, { end_row - 1, 0 })
+        vim.cmd("MoltenEvaluateVisual")
+        vim.cmd("normal! ")
+    end
+end, { desc = "Execute cell" })
+]]

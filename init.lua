@@ -21,7 +21,7 @@ require("core.keymaps")
 
 -- Plugins
 require("lazy").setup({
-    require("plugins.tokyonight"),
+--    require("plugins.tokyonight"),
     require("plugins.treesitter"),
     require("plugins.cmp"),
     require("plugins.lsp"),
@@ -33,3 +33,5 @@ require("lazy").setup({
     require("plugins.comment"),
     require("plugins.jupyter_support")
 })
+
+vim.cmd('colorscheme retrobox')
