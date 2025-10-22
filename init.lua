@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("core.options")
 require("core.keymaps")
+require("core.autocmds")
 
 require("lazy").setup({
     -- langauge
@@ -31,4 +32,5 @@ require("lazy").setup({
     -- jupyter notebooks
     require("plugins.molten"),
     require("plugins.image"),
+    require("plugins.jupytext")
 })
