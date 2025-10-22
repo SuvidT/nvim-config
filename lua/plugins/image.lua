@@ -7,6 +7,7 @@ return {
     config = function()
       require('image').setup({
         backend = 'kitty',  -- Kitty backend for image display
+        processor = "magic_cli",
         max_width = 100,
         max_height = 12,
         max_height_window_percentage = 50,

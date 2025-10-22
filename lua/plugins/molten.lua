@@ -11,7 +11,7 @@ return {
     config = function()
         -- Molten configuration
         vim.g.molten_auto_open_output = true
-        vim.g.molten_image_provider = 'kitty'  -- Use Kitty terminal for image display
+        vim.g.molten_image_provider = 'image.nvim'  -- Use Kitty terminal for image display
         vim.g.molten_use_border = true
         vim.g.molten_output_win_max_height = 12
         vim.g.molten_output_win_cover_gutter = false
