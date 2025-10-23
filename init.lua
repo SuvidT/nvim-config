@@ -16,7 +16,14 @@ require("core.options")
 require("core.keymaps")
 require("core.autocmds")
 
+vim.o.background = "dark"
+
 require("lazy").setup({
+    -- colorschemes: github themes, tokyonight
+    require("plugins.github-theme"),
+    require("plugins.tokyonight"),
+    require("plugins.kanagawa"),
+
     -- langauge
     require("plugins.lsp"),
     require("plugins.cmp"),
