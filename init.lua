@@ -41,3 +41,5 @@ require("lazy").setup({
     require("plugins.image"),
     require("plugins.jupytext")
 })
+
+vim.cmd["colorscheme kanagawa-dragon"]
