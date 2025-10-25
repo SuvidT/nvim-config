@@ -13,4 +13,4 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
-vim.opt.signcolumn = "yes:3"
+vim.opt.signcolumn = "yes"
