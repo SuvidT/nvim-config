@@ -14,3 +14,5 @@ vim.opt.smartcase = true
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.signcolumn = "yes"
+
+vim.g.lspconfig_deprecation_warnings = false
