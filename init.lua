@@ -35,6 +35,8 @@ require("lazy").setup({
     require("plugins.gitsigns"),
     require("plugins.telescope"),
     require("plugins.which-key"),
+    require("plugins.conform"),
+    require("plugins.nvim-lint"),
 
     -- jupyter notebooks
     require("plugins.molten"),
