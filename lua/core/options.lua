@@ -1,4 +1,3 @@
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.expandtab = true
@@ -14,4 +13,4 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
-
+vim.opt.signcolumn = "yes:3"
