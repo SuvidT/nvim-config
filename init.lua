@@ -1,3 +1,4 @@
+vim.g.lspconfig_deprecation_warnings = false
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -19,29 +20,29 @@ require("core.autocmds")
 vim.o.background = "dark"
 
 require("lazy").setup({
-    -- colorschemes: github themes, tokyonight
-    require("plugins.github-theme"),
-    require("plugins.tokyonight"),
-    require("plugins.kanagawa"),
+	-- colorschemes: github themes, tokyonight
+	require("plugins.github-theme"),
+	require("plugins.tokyonight"),
+	require("plugins.kanagawa"),
 
-    -- langauge
-    require("plugins.mason-lsp"),
-    require("plugins.cmp"),
-    require("plugins.treesitter"),
-    require("plugins.dap"),
-    require("plugins.autopairs"),
+	-- langauge
+	require("plugins.mason-lsp"),
+	require("plugins.cmp"),
+	require("plugins.treesitter"),
+	require("plugins.dap"),
+	require("plugins.autopairs"),
 
-    -- quaility of life
-    require("plugins.gitsigns"),
-    require("plugins.telescope"),
-    require("plugins.which-key"),
-    require("plugins.conform"),
-    require("plugins.nvim-lint"),
+	-- quaility of life
+	require("plugins.gitsigns"),
+	require("plugins.telescope"),
+	require("plugins.which-key"),
+	require("plugins.conform"),
+	require("plugins.nvim-lint"),
 
-    -- jupyter notebooks
-    require("plugins.molten"),
-    require("plugins.image"),
-    require("plugins.jupytext")
+	-- jupyter notebooks
+	require("plugins.molten"),
+	require("plugins.image"),
+	require("plugins.jupytext"),
 })
 
 vim.cmd("colorscheme kanagawa-dragon")
