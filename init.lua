@@ -25,6 +25,7 @@ require("lazy").setup({
     require("plugins.kanagawa"),
 
     -- langauge
+    require("plugins.mason")
     require("plugins.lsp"),
     require("plugins.cmp"),
     require("plugins.treesitter"),
