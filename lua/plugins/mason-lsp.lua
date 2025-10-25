@@ -1,18 +1,15 @@
 return {
-  "neovim/nvim-lspconfig",
+  "williamboman/mason.nvim",
   dependencies = {
-    "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
   },
   config = function()
-    -- Setup mason first
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = { "pyright", "clangd", "lua_ls" },
       automatic_installation = true,
     })
 
-    local lspconfig = require("lspconfig")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     local on_attach = function(_, bufnr)
@@ -24,18 +21,18 @@ return {
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
     end
 
-    -- FIXED: Use lspconfig.SERVER.setup() instead of vim.lsp.config()
-    lspconfig.pyright.setup({
+    -- Using native vim.lsp.config (Neovim 0.11+)
+    vim.lsp.config("pyright", {
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-    lspconfig.clangd.setup({
+    vim.lsp.config("clangd", {
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-    lspconfig.lua_ls.setup({
+    vim.lsp.config("lua_ls", {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
@@ -46,5 +43,10 @@ return {
         },
       },
     })
+
+    -- Enable the LSP servers
+    vim.lsp.enable("pyright")
+    vim.lsp.enable("clangd")
+    vim.lsp.enable("lua_ls")
   end,
 }
